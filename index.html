@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDF Tools Pro</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- pdf.js for thumbnails -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body>
+
+<header>
+  <h1>PDF Tools Pro</h1>
+  <p>Merge • Split • Delete • Compress (100% Offline)</p>
+</header>
+
+<section class="tools">
+
+<!-- MERGE -->
+<div class="tool-card">
+  <i class="fa fa-layer-group"></i>
+  <h2>Merge PDF</h2>
+  <input type="file" id="mergeInput" multiple accept="application/pdf">
+  <ul id="mergeList" class="merge-list"></ul>
+  <button onclick="mergePDF()">Merge PDFs</button>
+</div>
+
+<!-- SPLIT -->
+<div class="tool-card">
+  <i class="fa fa-scissors"></i>
+  <h2>Split PDF</h2>
+  <input type="file" id="splitInput" accept="application/pdf">
+  <button onclick="splitPDF()">Split PDF</button>
+</div>
+
+<!-- DELETE -->
+<div class="tool-card delete-card">
+  <i class="fa fa-trash"></i>
+  <h2>Delete Pages</h2>
+  <input type="file" id="deleteInput" accept="application/pdf">
+
+  <div id="pageSelector" class="hidden">
+    <p>Tap / Click page to DELETE</p>
+    <div id="pagesGrid" class="pages-grid"></div>
+    <button onclick="createDeletedPDF()">Create PDF</button>
+  </div>
+</div>
+
+<!-- COMPRESS -->
+<div class="tool-card">
+  <i class="fa fa-compress"></i>
+  <h2>Compress PDF</h2>
+  <input type="file" id="compressInput" accept="application/pdf">
+  <button onclick="compressPDF()">Compress PDF</button>
+</div>
+
+</section>
+
+<footer>
+  © 2026 PDF Tools Pro • Fast • Secure • Offline
+</footer>
+
+<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
